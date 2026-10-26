@@ -97,44 +97,60 @@ export function TrustAndHalalSection() {
           </div>
         </div>
 
-        {/* 4 Core Pillars */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-7 mb-16">
-          <div className="p-7 rounded-[2rem] bg-zinc-50/90 border border-zinc-200/90 space-y-3 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
-            <div className="w-13 h-13 rounded-2xl bg-red-600/10 text-red-600 flex items-center justify-center mb-3">
-              <ShieldCheck className="w-7 h-7" />
+        {/* 4 Core Pillars (2 per line on mobile, 4 on desktop) */}
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6 lg:gap-7 mb-12 sm:mb-16">
+          <div className="p-3.5 sm:p-6 lg:p-7 rounded-xl sm:rounded-2xl lg:rounded-[2rem] bg-zinc-50/90 border border-zinc-200/90 space-y-1.5 sm:space-y-3 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between">
+            <div>
+              <div className="w-9 h-9 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-red-600/10 text-red-600 flex items-center justify-center mb-2 sm:mb-3">
+                <ShieldCheck className="w-5 h-5 sm:w-6 sm:h-6" />
+              </div>
+              <h4 className="font-black text-xs sm:text-base lg:text-lg text-zinc-950 leading-snug">
+                Pure Halal Certified
+              </h4>
             </div>
-            <h4 className="font-black text-lg text-zinc-950">Pure Halal Certified</h4>
-            <p className="text-xs sm:text-sm text-zinc-600 leading-relaxed">
+            <p className="text-[11px] sm:text-xs lg:text-sm text-zinc-600 leading-relaxed mt-1">
               Every carcass is certified hand-slaughtered in accordance with strict halal criteria. Zero machine slaughtering or stunning compromises.
             </p>
           </div>
 
-          <div className="p-7 rounded-[2rem] bg-zinc-50/90 border border-zinc-200/90 space-y-3 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
-            <div className="w-13 h-13 rounded-2xl bg-red-600/10 text-red-600 flex items-center justify-center mb-3">
-              <Percent className="w-7 h-7" />
+          <div className="p-3.5 sm:p-6 lg:p-7 rounded-xl sm:rounded-2xl lg:rounded-[2rem] bg-zinc-50/90 border border-zinc-200/90 space-y-1.5 sm:space-y-3 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between">
+            <div>
+              <div className="w-9 h-9 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-red-600/10 text-red-600 flex items-center justify-center mb-2 sm:mb-3">
+                <Percent className="w-5 h-5 sm:w-6 sm:h-6" />
+              </div>
+              <h4 className="font-black text-xs sm:text-base lg:text-lg text-zinc-950 leading-snug">
+                Wholesale Volume Tiers
+              </h4>
             </div>
-            <h4 className="font-black text-lg text-zinc-950">Wholesale Volume Tiers</h4>
-            <p className="text-xs sm:text-sm text-zinc-600 leading-relaxed">
+            <p className="text-[11px] sm:text-xs lg:text-sm text-zinc-600 leading-relaxed mt-1">
               Save up to 15% on bulk master boxes and pallet-level orders. Net-15 and Net-30 credit terms available for qualified GTA restaurants.
             </p>
           </div>
 
-          <div className="p-7 rounded-[2rem] bg-zinc-50/90 border border-zinc-200/90 space-y-3 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
-            <div className="w-13 h-13 rounded-2xl bg-red-600/10 text-red-600 flex items-center justify-center mb-3">
-              <Award className="w-7 h-7" />
+          <div className="p-3.5 sm:p-6 lg:p-7 rounded-xl sm:rounded-2xl lg:rounded-[2rem] bg-zinc-50/90 border border-zinc-200/90 space-y-1.5 sm:space-y-3 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between">
+            <div>
+              <div className="w-9 h-9 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-red-600/10 text-red-600 flex items-center justify-center mb-2 sm:mb-3">
+                <Award className="w-5 h-5 sm:w-6 sm:h-6" />
+              </div>
+              <h4 className="font-black text-xs sm:text-base lg:text-lg text-zinc-950 leading-snug">
+                Ontario Pasture Raised
+              </h4>
             </div>
-            <h4 className="font-black text-lg text-zinc-950">Ontario Pasture Raised</h4>
-            <p className="text-xs sm:text-sm text-zinc-600 leading-relaxed">
+            <p className="text-[11px] sm:text-xs lg:text-sm text-zinc-600 leading-relaxed mt-1">
               Direct farm partnerships across Ontario and Western Canada ensure ethical animal husbandry, superior marbling, and zero added hormones.
             </p>
           </div>
 
-          <div className="p-7 rounded-[2rem] bg-zinc-50/90 border border-zinc-200/90 space-y-3 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
-            <div className="w-13 h-13 rounded-2xl bg-red-600/10 text-red-600 flex items-center justify-center mb-3">
-              <ChefHat className="w-7 h-7" />
+          <div className="p-3.5 sm:p-6 lg:p-7 rounded-xl sm:rounded-2xl lg:rounded-[2rem] bg-zinc-50/90 border border-zinc-200/90 space-y-1.5 sm:space-y-3 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between">
+            <div>
+              <div className="w-9 h-9 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-red-600/10 text-red-600 flex items-center justify-center mb-2 sm:mb-3">
+                <ChefHat className="w-5 h-5 sm:w-6 sm:h-6" />
+              </div>
+              <h4 className="font-black text-xs sm:text-base lg:text-lg text-zinc-950 leading-snug">
+                Bespoke Kitchen Trimming
+              </h4>
             </div>
-            <h4 className="font-black text-lg text-zinc-950">Bespoke Kitchen Trimming</h4>
-            <p className="text-xs sm:text-sm text-zinc-600 leading-relaxed">
+            <p className="text-[11px] sm:text-xs lg:text-sm text-zinc-600 leading-relaxed mt-1">
               Exact portion cutting, bone frenching, vacuum skin packaging, and personalized kitchen labeling tailored to your menu cost targets.
             </p>
           </div>

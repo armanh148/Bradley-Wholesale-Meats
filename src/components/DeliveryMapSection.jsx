@@ -196,22 +196,33 @@ export function DeliveryMapSection() {
 
         {/* Right 7 Cols: GTA Delivery Zones Cards & Van Tracking */}
         <div className="lg:col-span-7 space-y-5">
-          <div className="bg-white rounded-[2.25rem] p-7 sm:p-8 border border-zinc-200 shadow-xl">
-            <div className="flex items-center justify-between mb-6">
-              <h3 className="font-black text-xl text-zinc-950">
-                Active GTA Refrigerated Delivery Routes
-              </h3>
-              <span className="px-3.5 py-1 rounded-full bg-emerald-100 text-emerald-800 text-xs font-bold flex items-center gap-1.5">
-                <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-                <span>Fleet Active</span>
-              </span>
+          <div className="bg-white rounded-2xl sm:rounded-[2rem] p-4 sm:p-7 lg:p-8 border border-zinc-200 shadow-xl">
+            {/* Header: Title & Fleet Active Status */}
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-5 sm:mb-6">
+              <div>
+                <div className="flex items-center gap-2 mb-1.5 flex-wrap">
+                  <span className="px-2.5 py-0.5 rounded-full bg-emerald-50 text-emerald-700 text-[10px] sm:text-[11px] font-bold border border-emerald-200 flex items-center gap-1.5 shrink-0 whitespace-nowrap">
+                    <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                    <span>Fleet Active</span>
+                  </span>
+                  <span className="text-[11px] text-zinc-400 font-semibold">• York & GTA Direct Hub</span>
+                </div>
+                <h3 className="font-black text-lg sm:text-xl lg:text-2xl text-zinc-950 tracking-tight leading-snug">
+                  Active GTA Refrigerated Delivery Routes
+                </h3>
+              </div>
+
+              <div className="hidden sm:flex items-center gap-1.5 text-xs text-zinc-500 font-semibold shrink-0 bg-zinc-50 px-3 py-1.5 rounded-xl border border-zinc-200/80">
+                <ThermometerSnowflake className="w-3.5 h-3.5 text-cyan-600" />
+                <span>0°C – 2°C Reefer Lock</span>
+              </div>
             </div>
 
             <div className="space-y-4">
               {GTA_DELIVERY_ZONES.map((zone, idx) => (
                 <div 
                   key={zone.zone}
-                  className="p-5 rounded-2xl bg-zinc-50 border border-zinc-200/90 hover:border-red-500/40 hover:bg-white hover:shadow-md transition-all duration-200"
+                  className="p-4 sm:p-5 rounded-xl sm:rounded-2xl bg-zinc-50 border border-zinc-200/90 hover:border-red-500/40 hover:bg-white hover:shadow-md transition-all duration-200"
                 >
                   <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-2.5">
                     <div className="flex items-center gap-2.5">

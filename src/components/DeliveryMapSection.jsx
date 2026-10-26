@@ -52,15 +52,15 @@ export function DeliveryMapSection() {
     <section id="delivery-zones" className="py-24 site-container">
       {/* Title */}
       <div className="text-center max-w-4xl mx-auto mb-16">
-        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-50 text-blue-700 text-xs font-extrabold uppercase tracking-wider mb-3 border border-blue-200">
-          <Truck className="w-4 h-4" />
+        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-50 text-blue-800 text-xs font-black uppercase tracking-wider mb-3 border border-blue-200/80 shadow-xs">
+          <Truck className="w-4 h-4 text-blue-600" />
           <span>Cold-Chain Fleet Logistics</span>
         </div>
         <h2 className="text-3xl sm:text-5xl font-black text-zinc-950 tracking-tight">
           York Region & Greater Toronto Delivery Fleet
         </h2>
         <p className="text-zinc-600 text-base sm:text-lg mt-3 leading-relaxed">
-          Dispatching daily from 445 Edgeley Blvd Unit 4, Concord. Equipped with dual-temp reefers maintained strictly between 0°C and 2°C.
+          Dispatching daily from 445 Edgeley Blvd Unit 4, Concord. Equipped with dual-temperature reefers maintained strictly between 0°C and 2°C with live GPS telematics.
         </p>
       </div>
 

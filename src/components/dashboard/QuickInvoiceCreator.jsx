@@ -184,26 +184,27 @@ export function QuickInvoiceCreator({ onSaveInvoice, onDispatchOrder }) {
       )}
 
       {/* Top Controls Bar */}
-      <div className="bg-white rounded-3xl p-6 border border-zinc-200/90 shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-4">
+      <div className="bg-white rounded-[2rem] p-6 sm:p-7 border border-zinc-200/80 shadow-[0_4px_25px_rgba(0,0,0,0.03)] flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div>
-          <div className="flex items-center gap-2 mb-1">
-            <span className="px-2.5 py-0.5 rounded-full bg-red-100 text-red-700 text-xs font-bold font-mono">
+          <div className="flex items-center gap-2 mb-1.5">
+            <span className="px-3 py-1 rounded-full bg-zinc-950 text-white text-xs font-black font-mono tracking-wider flex items-center gap-1.5">
+              <span className="w-1.5 h-1.5 rounded-full bg-red-500 animate-pulse"></span>
               TERMINAL POS-01
             </span>
-            <span className="text-xs text-zinc-500 font-medium">
+            <span className="text-xs text-zinc-500 font-semibold">
               Concord Cutting Room & Scale Station
             </span>
           </div>
-          <h2 className="text-2xl font-extrabold text-zinc-900 tracking-tight">
+          <h2 className="text-2xl sm:text-3xl font-black text-zinc-950 tracking-tight">
             Commercial Wholesale Invoice Creator
           </h2>
         </div>
 
-        <div className="flex items-center gap-2 self-start md:self-auto">
+        <div className="flex items-center gap-3 self-start md:self-auto">
           <button
             type="button"
             onClick={() => setPrintModalOpen(true)}
-            className="px-4 py-2.5 rounded-xl border border-zinc-200 bg-white hover:bg-zinc-50 text-zinc-800 font-bold text-xs flex items-center gap-2 transition-colors shadow-sm"
+            className="px-4.5 py-2.5 rounded-2xl border border-zinc-200/90 bg-white hover:bg-zinc-50 text-zinc-800 font-bold text-xs flex items-center gap-2 transition-all shadow-sm active:scale-95"
           >
             <Printer className="w-4 h-4 text-zinc-600" />
             <span>Print Invoice Preview</span>
@@ -212,7 +213,7 @@ export function QuickInvoiceCreator({ onSaveInvoice, onDispatchOrder }) {
           <button
             type="button"
             onClick={handleSaveAndDispatch}
-            className="px-5 py-2.5 rounded-xl bg-red-600 hover:bg-red-700 text-white font-bold text-xs flex items-center gap-2 shadow-lg shadow-red-600/30 transition-all hover:scale-102"
+            className="px-6 py-2.5 rounded-2xl bg-gradient-to-r from-red-600 to-rose-700 hover:from-red-700 hover:to-rose-800 text-white font-black text-xs flex items-center gap-2 shadow-lg shadow-red-600/35 transition-all hover:scale-102 active:scale-95"
           >
             <Save className="w-4 h-4" />
             <span>Save & Dispatch Order</span>
@@ -220,15 +221,15 @@ export function QuickInvoiceCreator({ onSaveInvoice, onDispatchOrder }) {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-7 items-start">
         
         {/* Left 8 Cols: Invoice Line Items Builder */}
-        <div className="lg:col-span-8 bg-white rounded-3xl p-6 border border-zinc-200/90 shadow-sm space-y-6">
+        <div className="lg:col-span-8 bg-white rounded-[2rem] p-6 sm:p-8 border border-zinc-200/80 shadow-[0_4px_25px_rgba(0,0,0,0.03)] space-y-7">
           
           {/* Client Details Selector */}
-          <div className="p-4 rounded-2xl bg-zinc-50 border border-zinc-200">
-            <div className="flex items-center justify-between mb-3">
-              <span className="text-xs font-bold uppercase tracking-wider text-zinc-500 flex items-center gap-1.5">
+          <div className="p-5 rounded-2xl bg-zinc-50/90 border border-zinc-200/80">
+            <div className="flex items-center justify-between mb-3.5">
+              <span className="text-xs font-black uppercase tracking-wider text-zinc-700 flex items-center gap-2">
                 <Building2 className="w-4 h-4 text-red-600" />
                 <span>Client Restaurant / Purchaser</span>
               </span>
@@ -236,23 +237,23 @@ export function QuickInvoiceCreator({ onSaveInvoice, onDispatchOrder }) {
               <button
                 type="button"
                 onClick={() => setIsCustomClient(!isCustomClient)}
-                className="text-xs font-bold text-red-600 hover:text-red-700 underline"
+                className="text-xs font-black text-red-600 hover:text-red-700 underline transition-colors"
               >
                 {isCustomClient ? 'Choose from Existing Accounts' : '+ New Customer / Walk-in'}
               </button>
             </div>
 
             {!isCustomClient ? (
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3.5">
                 <div className="sm:col-span-2">
-                  <label className="text-[11px] font-bold text-zinc-600 block mb-1">Select GTA Account</label>
+                  <label className="text-[11px] font-black text-zinc-500 uppercase tracking-wide block mb-1">Select GTA Account</label>
                   <select
                     value={selectedClient.id}
                     onChange={(e) => {
                       const found = INITIAL_CLIENTS.find(c => c.id === e.target.value);
                       if (found) setSelectedClient(found);
                     }}
-                    className="w-full p-2.5 rounded-xl text-xs font-semibold bg-white border border-zinc-200 focus:outline-none focus:border-red-600"
+                    className="w-full p-3 rounded-xl text-xs font-bold bg-white border border-zinc-200 focus:outline-none focus:ring-2 focus:ring-red-500/20 focus:border-red-600 shadow-xs"
                   >
                     {INITIAL_CLIENTS.map(c => (
                       <option key={c.id} value={c.id}>
@@ -263,11 +264,11 @@ export function QuickInvoiceCreator({ onSaveInvoice, onDispatchOrder }) {
                 </div>
 
                 <div>
-                  <label className="text-[11px] font-bold text-zinc-600 block mb-1">Payment Terms</label>
+                  <label className="text-[11px] font-black text-zinc-500 uppercase tracking-wide block mb-1">Payment Terms</label>
                   <select
                     value={paymentTerms}
                     onChange={(e) => setPaymentTerms(e.target.value)}
-                    className="w-full p-2.5 rounded-xl text-xs font-semibold bg-white border border-zinc-200 focus:outline-none focus:border-red-600"
+                    className="w-full p-3 rounded-xl text-xs font-bold bg-white border border-zinc-200 focus:outline-none focus:ring-2 focus:ring-red-500/20 focus:border-red-600 shadow-xs"
                   >
                     <option>Net 15</option>
                     <option>Net 30</option>
@@ -277,35 +278,35 @@ export function QuickInvoiceCreator({ onSaveInvoice, onDispatchOrder }) {
                 </div>
               </div>
             ) : (
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3.5">
                 <div>
-                  <label className="text-[11px] font-bold text-zinc-600 block mb-1">Client Restaurant Name</label>
+                  <label className="text-[11px] font-black text-zinc-500 uppercase tracking-wide block mb-1">Restaurant Name</label>
                   <input
                     type="text"
                     placeholder="e.g. Maple Leaf Bistro"
                     value={customClientName}
                     onChange={(e) => setCustomClientName(e.target.value)}
-                    className="w-full p-2 rounded-xl text-xs bg-white border border-zinc-200"
+                    className="w-full p-3 rounded-xl text-xs font-bold bg-white border border-zinc-200 focus:outline-none focus:ring-2 focus:ring-red-500/20 focus:border-red-600"
                   />
                 </div>
                 <div>
-                  <label className="text-[11px] font-bold text-zinc-600 block mb-1">Phone</label>
+                  <label className="text-[11px] font-black text-zinc-500 uppercase tracking-wide block mb-1">Phone</label>
                   <input
                     type="text"
                     placeholder="+1 (905) 555-XXXX"
                     value={customClientPhone}
                     onChange={(e) => setCustomClientPhone(e.target.value)}
-                    className="w-full p-2 rounded-xl text-xs bg-white border border-zinc-200"
+                    className="w-full p-3 rounded-xl text-xs font-bold bg-white border border-zinc-200 focus:outline-none focus:ring-2 focus:ring-red-500/20 focus:border-red-600"
                   />
                 </div>
                 <div>
-                  <label className="text-[11px] font-bold text-zinc-600 block mb-1">Delivery Address</label>
+                  <label className="text-[11px] font-black text-zinc-500 uppercase tracking-wide block mb-1">Delivery Address</label>
                   <input
                     type="text"
                     placeholder="Concord / Vaughan Address"
                     value={customClientAddress}
                     onChange={(e) => setCustomClientAddress(e.target.value)}
-                    className="w-full p-2 rounded-xl text-xs bg-white border border-zinc-200"
+                    className="w-full p-3 rounded-xl text-xs font-bold bg-white border border-zinc-200 focus:outline-none focus:ring-2 focus:ring-red-500/20 focus:border-red-600"
                   />
                 </div>
               </div>
@@ -314,34 +315,34 @@ export function QuickInvoiceCreator({ onSaveInvoice, onDispatchOrder }) {
 
           {/* Line Items Table */}
           <div>
-            <div className="flex items-center justify-between mb-3">
-              <h3 className="font-extrabold text-sm text-zinc-900 uppercase tracking-wide">
+            <div className="flex items-center justify-between mb-4">
+              <h3 className="font-black text-sm text-zinc-950 uppercase tracking-wide">
                 Invoice Cuts & Weight Scale Readings
               </h3>
-              <span className="text-xs text-zinc-500 font-mono">
+              <span className="text-xs text-zinc-500 font-mono font-bold bg-zinc-100 px-2.5 py-1 rounded-lg">
                 {lineItems.length} Products Added
               </span>
             </div>
 
-            <div className="space-y-3">
+            <div className="space-y-3.5">
               {lineItems.map((item, index) => {
                 const lineTotal = item.weightKg * item.ratePerKg;
                 return (
                   <div 
                     key={item.id}
-                    className="p-3.5 rounded-2xl bg-zinc-50/80 border border-zinc-200/90 flex flex-col sm:flex-row items-start sm:items-center gap-3 transition-all hover:bg-zinc-50"
+                    className="p-4 rounded-2xl bg-zinc-50/90 border border-zinc-200/90 flex flex-col sm:flex-row items-start sm:items-center gap-3.5 transition-all hover:bg-white hover:shadow-md"
                   >
-                    <span className="w-6 h-6 rounded-lg bg-zinc-200 text-zinc-700 text-xs font-bold flex items-center justify-center shrink-0">
+                    <span className="w-7 h-7 rounded-xl bg-zinc-200 text-zinc-800 text-xs font-black flex items-center justify-center shrink-0">
                       {index + 1}
                     </span>
 
                     {/* Cut Selector */}
                     <div className="flex-1 min-w-[200px] w-full sm:w-auto">
-                      <label className="text-[10px] font-bold text-zinc-400 block mb-0.5">Wholesale Meat Cut</label>
+                      <label className="text-[10px] font-black uppercase tracking-wider text-zinc-400 block mb-0.5">Wholesale Meat Cut</label>
                       <select
                         value={item.productId}
                         onChange={(e) => handleProductSelect(item.id, e.target.value)}
-                        className="w-full p-2 rounded-xl text-xs font-semibold bg-white border border-zinc-200"
+                        className="w-full p-2.5 rounded-xl text-xs font-bold bg-white border border-zinc-200 focus:outline-none focus:ring-2 focus:ring-red-500/20 focus:border-red-600 shadow-xs"
                       >
                         {WHOLESALE_CATALOG.map(p => (
                           <option key={p.id} value={p.id}>
@@ -352,40 +353,40 @@ export function QuickInvoiceCreator({ onSaveInvoice, onDispatchOrder }) {
                     </div>
 
                     {/* Weight Input + Scale Button */}
-                    <div className="w-full sm:w-36">
-                      <label className="text-[10px] font-bold text-zinc-400 block mb-0.5">Weight (kg)</label>
-                      <div className="flex gap-1">
+                    <div className="w-full sm:w-40">
+                      <label className="text-[10px] font-black uppercase tracking-wider text-zinc-400 block mb-0.5">Weight (kg)</label>
+                      <div className="flex gap-1.5">
                         <input
                           type="number"
                           step="0.1"
                           min="0.5"
                           value={item.weightKg}
                           onChange={(e) => handleUpdateItem(item.id, 'weightKg', Number(e.target.value))}
-                          className="w-full p-2 rounded-xl text-xs font-mono font-bold bg-white border border-zinc-200 text-right"
+                          className="w-full p-2.5 rounded-xl text-xs font-mono font-black bg-white border border-zinc-200 text-right focus:outline-none focus:ring-2 focus:ring-red-500/20 focus:border-red-600 shadow-xs"
                         />
                         <button
                           type="button"
                           onClick={() => handleScaleTare(item.id)}
-                          className="px-2 rounded-xl bg-zinc-200 hover:bg-zinc-300 text-zinc-700 text-[10px] font-bold flex items-center justify-center shrink-0 transition-colors"
+                          className="px-2.5 rounded-xl bg-red-50 hover:bg-red-100 border border-red-200/80 text-red-600 text-[10px] font-black flex items-center justify-center shrink-0 transition-all active:scale-95 shadow-xs"
                           title="Tare & Read from Certified Digital Scale"
                         >
-                          <Scale className="w-3.5 h-3.5 text-red-600" />
+                          <Scale className="w-4 h-4 text-red-600" />
                         </button>
                       </div>
                     </div>
 
                     {/* Unit Rate */}
                     <div className="w-full sm:w-28 text-right sm:text-left">
-                      <label className="text-[10px] font-bold text-zinc-400 block mb-0.5">Rate / kg</label>
-                      <div className="text-xs font-mono font-bold text-zinc-800 pt-2">
+                      <label className="text-[10px] font-black uppercase tracking-wider text-zinc-400 block mb-0.5">Rate / kg</label>
+                      <div className="text-xs font-mono font-black text-zinc-800 pt-2">
                         ${item.ratePerKg.toFixed(2)}
                       </div>
                     </div>
 
                     {/* Line Total */}
                     <div className="w-full sm:w-32 text-right">
-                      <label className="text-[10px] font-bold text-zinc-400 block mb-0.5">Amount (CAD)</label>
-                      <div className="text-sm font-mono font-extrabold text-zinc-950 pt-1.5">
+                      <label className="text-[10px] font-black uppercase tracking-wider text-zinc-400 block mb-0.5">Amount (CAD)</label>
+                      <div className="text-base font-mono font-black text-zinc-950 pt-1.5">
                         ${lineTotal.toFixed(2)}
                       </div>
                     </div>
@@ -395,7 +396,7 @@ export function QuickInvoiceCreator({ onSaveInvoice, onDispatchOrder }) {
                       type="button"
                       onClick={() => handleRemoveItem(item.id)}
                       disabled={lineItems.length <= 1}
-                      className="text-zinc-400 hover:text-red-600 disabled:opacity-30 p-2 shrink-0 transition-colors"
+                      className="text-zinc-400 hover:text-red-600 hover:bg-red-50 p-2 rounded-xl disabled:opacity-30 shrink-0 transition-all"
                       title="Remove line"
                     >
                       <Trash2 className="w-4 h-4" />
@@ -408,10 +409,10 @@ export function QuickInvoiceCreator({ onSaveInvoice, onDispatchOrder }) {
             <button
               type="button"
               onClick={handleAddItem}
-              className="mt-4 w-full py-2.5 rounded-xl border border-dashed border-zinc-300 hover:border-red-600 text-zinc-600 hover:text-red-600 text-xs font-bold flex items-center justify-center gap-2 transition-colors bg-white"
+              className="mt-4 w-full py-3.5 rounded-2xl border-2 border-dashed border-zinc-300 hover:border-red-600 text-zinc-600 hover:text-red-600 text-xs font-black flex items-center justify-center gap-2 transition-all bg-zinc-50/50 hover:bg-red-50/20 active:scale-98"
             >
               <Plus className="w-4 h-4" />
-              <span>Add Another Wholesale Item Line</span>
+              <span>+ Add Another Wholesale Item Line</span>
             </button>
           </div>
 
@@ -420,47 +421,52 @@ export function QuickInvoiceCreator({ onSaveInvoice, onDispatchOrder }) {
         {/* Right 4 Cols: Dynamic Tax, Discounts & Financial Totals */}
         <div className="lg:col-span-4 space-y-6">
           
-          <div className="bg-zinc-900 text-white rounded-3xl p-6 border border-zinc-800 shadow-xl space-y-5">
-            <div className="flex items-center justify-between pb-3 border-b border-zinc-800">
-              <span className="text-xs font-mono uppercase tracking-wider text-zinc-400">
+          <div className="bg-gradient-to-br from-zinc-950 via-[#111116] to-zinc-950 text-white rounded-[2.25rem] p-7 border border-zinc-800 shadow-[0_20px_50px_rgba(0,0,0,0.35)] space-y-5 relative overflow-hidden">
+            {/* Top Light Accent */}
+            <div className="absolute top-0 right-0 w-40 h-40 bg-red-600/15 rounded-full blur-2xl pointer-events-none" />
+
+            <div className="relative z-10 flex items-center justify-between pb-3.5 border-b border-zinc-800">
+              <span className="text-xs font-mono uppercase tracking-widest text-zinc-400 font-bold">
                 Invoice Breakdown
               </span>
-              <span className="font-mono text-xs font-bold text-red-500">
+              <span className="font-mono text-xs font-black text-red-400 bg-red-950/80 px-2.5 py-1 rounded-md border border-red-800/80">
                 {invoiceId}
               </span>
             </div>
 
-            <div className="space-y-3 text-xs">
-              <div className="flex justify-between text-zinc-400">
+            <div className="relative z-10 space-y-3.5 text-xs">
+              <div className="flex justify-between text-zinc-400 font-semibold">
                 <span>Gross Weight:</span>
-                <span className="font-mono text-white">
+                <span className="font-mono text-white font-bold text-sm">
                   {lineItems.reduce((a, b) => a + Number(b.weightKg), 0).toFixed(2)} kg
                 </span>
               </div>
 
-              <div className="flex justify-between text-zinc-400">
+              <div className="flex justify-between text-zinc-400 font-semibold">
                 <span>Subtotal (CAD):</span>
-                <span className="font-mono text-white font-bold">
+                <span className="font-mono text-white font-bold text-sm">
                   ${subtotal.toFixed(2)}
                 </span>
               </div>
 
               {/* Discount Selector */}
-              <div className="pt-2 border-t border-zinc-800">
-                <div className="flex justify-between items-center mb-1">
-                  <span className="text-zinc-400">Wholesale Volume Discount:</span>
-                  <span className="font-mono text-emerald-400 font-bold">
+              <div className="pt-2.5 border-t border-zinc-800/90">
+                <div className="flex justify-between items-center mb-1.5">
+                  <span className="text-zinc-400 font-semibold">Wholesale Volume Discount:</span>
+                  <span className="font-mono text-emerald-400 font-black">
                     {discountPercent}% (-${discountAmount.toFixed(2)})
                   </span>
                 </div>
-                <div className="flex gap-1">
+                <div className="grid grid-cols-4 gap-1.5 bg-zinc-900 p-1 rounded-xl border border-zinc-800">
                   {[0, 5, 10, 15].map(pct => (
                     <button
                       key={pct}
                       type="button"
                       onClick={() => handleUpdateItem('discount', pct)}
-                      className={`flex-1 py-1 rounded text-[11px] font-bold ${
-                        discountPercent === pct ? 'bg-emerald-600 text-white' : 'bg-zinc-800 text-zinc-400'
+                      className={`py-1.5 rounded-lg text-[11px] font-black transition-all ${
+                        discountPercent === pct 
+                          ? 'bg-emerald-500 text-zinc-950 shadow-md' 
+                          : 'text-zinc-400 hover:text-white hover:bg-zinc-800'
                       }`}
                     >
                       {pct}%
@@ -470,18 +476,20 @@ export function QuickInvoiceCreator({ onSaveInvoice, onDispatchOrder }) {
               </div>
 
               {/* Tax Exempt Toggle */}
-              <div className="pt-2 border-t border-zinc-800">
+              <div className="pt-2.5 border-t border-zinc-800/90">
                 <div className="flex justify-between items-center">
                   <div>
-                    <span className="text-zinc-400 block">Canadian HST / Tax:</span>
+                    <span className="text-zinc-400 block font-semibold">Canadian HST / Tax:</span>
                     <span className="text-[10px] text-zinc-500">Fresh Meat 0% Exempt</span>
                   </div>
-                  <div className="flex items-center gap-1">
+                  <div className="flex items-center gap-1.5 bg-zinc-900 p-1 rounded-xl border border-zinc-800">
                     <button
                       type="button"
                       onClick={() => setTaxRate(0)}
-                      className={`px-2 py-0.5 rounded text-[10px] font-bold ${
-                        taxRate === 0 ? 'bg-red-600 text-white' : 'bg-zinc-800 text-zinc-400'
+                      className={`px-2.5 py-1 rounded-lg text-[10px] font-black transition-all ${
+                        taxRate === 0 
+                          ? 'bg-red-600 text-white shadow-xs' 
+                          : 'text-zinc-400 hover:text-white'
                       }`}
                     >
                       0% (Exempt)
@@ -489,8 +497,10 @@ export function QuickInvoiceCreator({ onSaveInvoice, onDispatchOrder }) {
                     <button
                       type="button"
                       onClick={() => setTaxRate(13)}
-                      className={`px-2 py-0.5 rounded text-[10px] font-bold ${
-                        taxRate === 13 ? 'bg-red-600 text-white' : 'bg-zinc-800 text-zinc-400'
+                      className={`px-2.5 py-1 rounded-lg text-[10px] font-black transition-all ${
+                        taxRate === 13 
+                          ? 'bg-red-600 text-white shadow-xs' 
+                          : 'text-zinc-400 hover:text-white'
                       }`}
                     >
                       13% HST
@@ -498,7 +508,7 @@ export function QuickInvoiceCreator({ onSaveInvoice, onDispatchOrder }) {
                   </div>
                 </div>
                 {taxRate > 0 && (
-                  <div className="flex justify-between text-zinc-300 mt-1 font-mono text-xs">
+                  <div className="flex justify-between text-zinc-300 mt-1.5 font-mono text-xs">
                     <span>Tax (13%):</span>
                     <span>${taxAmount.toFixed(2)} CAD</span>
                   </div>
@@ -507,23 +517,23 @@ export function QuickInvoiceCreator({ onSaveInvoice, onDispatchOrder }) {
 
               {/* Total Balance */}
               <div className="pt-4 border-t border-zinc-800 flex justify-between items-baseline">
-                <span className="text-sm font-bold text-zinc-200">Total Due (CAD):</span>
+                <span className="text-sm font-black text-zinc-200">Total Due (CAD):</span>
                 <div className="text-right">
-                  <div className="text-3xl font-black text-white font-mono tracking-tight">
+                  <div className="text-3xl sm:text-4xl font-black text-white font-mono tracking-tight drop-shadow-sm">
                     ${totalAmount.toFixed(2)}
                   </div>
-                  <div className="text-[10px] text-emerald-400">
+                  <div className="text-[11px] text-emerald-400 font-bold mt-0.5">
                     Payment Terms: {paymentTerms}
                   </div>
                 </div>
               </div>
             </div>
 
-            <div className="pt-2 space-y-2">
+            <div className="relative z-10 pt-3 space-y-2.5">
               <button
                 type="button"
                 onClick={handleSaveAndDispatch}
-                className="w-full py-3.5 rounded-xl bg-red-600 hover:bg-red-700 text-white font-extrabold text-xs shadow-lg shadow-red-600/30 flex items-center justify-center gap-2 transition-all"
+                className="w-full py-4 rounded-2xl bg-gradient-to-r from-red-600 via-red-600 to-rose-700 hover:from-red-700 hover:to-rose-800 text-white font-black text-sm shadow-[0_10px_25px_rgba(220,38,38,0.4)] flex items-center justify-center gap-2 active:scale-95 transition-all"
               >
                 <Save className="w-4 h-4" />
                 <span>Save Invoice & Stage Dispatch</span>
@@ -532,7 +542,7 @@ export function QuickInvoiceCreator({ onSaveInvoice, onDispatchOrder }) {
               <button
                 type="button"
                 onClick={() => setPrintModalOpen(true)}
-                className="w-full py-2.5 rounded-xl bg-zinc-800 hover:bg-zinc-700 text-zinc-200 font-bold text-xs flex items-center justify-center gap-2 transition-colors"
+                className="w-full py-3 rounded-2xl bg-zinc-800/80 hover:bg-zinc-800 text-zinc-200 hover:text-white font-bold text-xs flex items-center justify-center gap-2 border border-zinc-700/60 transition-all active:scale-95"
               >
                 <Printer className="w-3.5 h-3.5 text-zinc-400" />
                 <span>Print Official Customer Copy</span>
@@ -541,17 +551,18 @@ export function QuickInvoiceCreator({ onSaveInvoice, onDispatchOrder }) {
           </div>
 
           {/* Scale Connection Status Box */}
-          <div className="bg-white rounded-2xl p-4 border border-zinc-200 text-xs text-zinc-600 space-y-1.5 shadow-sm">
-            <div className="flex items-center justify-between text-zinc-800 font-bold">
-              <span className="flex items-center gap-1.5">
+          <div className="bg-white rounded-[2rem] p-5 border border-zinc-200/80 text-xs text-zinc-600 space-y-2 shadow-[0_4px_20px_rgba(0,0,0,0.03)]">
+            <div className="flex items-center justify-between text-zinc-900 font-black">
+              <span className="flex items-center gap-2">
                 <Scale className="w-4 h-4 text-emerald-600" />
                 <span>Mettler-Toledo ToledoBench Scale</span>
               </span>
-              <span className="text-[10px] text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded-full font-mono">
-                Connected: COM3
+              <span className="text-[10px] text-emerald-700 bg-emerald-50 px-2.5 py-1 rounded-full font-mono font-black border border-emerald-200 flex items-center gap-1">
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+                COM3
               </span>
             </div>
-            <p className="text-[11px] text-zinc-500">
+            <p className="text-[11px] text-zinc-500 leading-relaxed font-medium">
               Live scale integration calibrated to CFIA Weights & Measures legal-for-trade meat packaging standard.
             </p>
           </div>

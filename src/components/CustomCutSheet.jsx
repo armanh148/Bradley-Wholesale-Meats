@@ -97,20 +97,23 @@ export function CustomCutSheet({ preSelectedProduct, onSubmitSuccess }) {
   };
 
   return (
-    <section id="custom-cuts" className="py-24 bg-zinc-100/80 border-y border-zinc-200/90">
-      <div className="site-container">
+    <section id="custom-cuts" className="py-24 bg-zinc-100/70 border-y border-zinc-200/90 relative overflow-hidden">
+      {/* Background Subtle Accent */}
+      <div className="absolute top-0 right-0 w-96 h-96 bg-red-600/5 rounded-full blur-3xl pointer-events-none" />
+
+      <div className="site-container relative z-10">
         
         {/* Title & Badge */}
         <div className="text-center max-w-4xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-zinc-200 shadow-sm text-xs font-extrabold text-red-600 uppercase tracking-wider mb-3">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/90 backdrop-blur-md border border-zinc-200 shadow-sm text-xs font-black text-red-600 uppercase tracking-wider mb-3">
             <ChefHat className="w-4 h-4" />
-            <span>Executive Chef & Butcher Spec Sheet</span>
+            <span>Executive Chef & Master Butcher Studio</span>
           </div>
           <h2 className="text-3xl sm:text-5xl font-black text-zinc-950 tracking-tight">
             Custom Meat Cut Specification Form
           </h2>
           <p className="text-zinc-600 text-base sm:text-lg mt-3 leading-relaxed">
-            Need exact portion control for your restaurant menu? Specify your primal cut, thickness, fat cap trim, bone specs, and packaging. Our Concord master butchers cut to your exact kitchen standard.
+            Exact portion control fabricated for your restaurant menu. Specify your primal cut, thickness, fat cap trim, bone specs, and commercial packaging. Our Concord master butchers cut to your exact kitchen standard.
           </p>
         </div>
 

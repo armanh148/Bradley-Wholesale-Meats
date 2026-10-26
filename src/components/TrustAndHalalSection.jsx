@@ -38,24 +38,24 @@ export function TrustAndHalalSection() {
   ];
 
   return (
-    <section className="py-24 bg-white border-b border-zinc-200/90 relative overflow-hidden">
+    <section className="py-10 sm:py-16 lg:py-20 bg-white border-b border-zinc-200/90 relative overflow-hidden">
       <div className="site-container">
         
         {/* Rating Hero Banner */}
-        <div className="bg-gradient-to-br from-zinc-950 via-[#111116] to-zinc-950 rounded-[2.5rem] p-8 sm:p-14 text-white relative overflow-hidden mb-16 shadow-[0_25px_60px_rgba(0,0,0,0.2)] border border-zinc-800">
+        <div className="bg-gradient-to-br from-zinc-950 via-[#111116] to-zinc-950 rounded-2xl sm:rounded-[2.5rem] p-5 sm:p-10 lg:p-14 text-white relative overflow-hidden mb-8 sm:mb-14 shadow-xl border border-zinc-800">
           <div className="absolute top-0 right-0 w-[550px] h-[550px] bg-red-600/15 rounded-full blur-[120px] pointer-events-none" />
           <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-amber-500/10 rounded-full blur-[100px] pointer-events-none" />
           
-          <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
-            <div className="lg:col-span-7 space-y-5">
-              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-red-600/20 text-red-400 border border-red-500/30 text-xs font-black uppercase tracking-wider">
-                <Star className="w-4 h-4 fill-red-400" />
+          <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-10 items-center">
+            <div className="lg:col-span-7 space-y-4 sm:space-y-5">
+              <div className="inline-flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-1 sm:py-1.5 rounded-full bg-red-600/20 text-red-400 border border-red-500/30 text-[10px] sm:text-xs font-black uppercase tracking-wider">
+                <Star className="w-3.5 sm:w-4 h-3.5 sm:h-4 fill-red-400" />
                 <span>Highest Rated Wholesale Butcher in Concord</span>
               </div>
-              <h3 className="text-3xl sm:text-5xl font-black tracking-tight text-white leading-tight">
+              <h3 className="text-2xl sm:text-4xl lg:text-5xl font-black tracking-tight text-white leading-tight">
                 4.8 Out of 5.0 Stars Across 137 Google Reviews
               </h3>
-              <p className="text-zinc-400 text-base sm:text-lg leading-relaxed max-w-2xl font-normal">
+              <p className="text-zinc-400 text-xs sm:text-base leading-relaxed max-w-2xl font-normal">
                 Trusted by Greater Toronto Area executive chefs, banquet halls, boutique butcher shops, and households who demand uncompromising halal integrity and pristine butchery.
               </p>
 

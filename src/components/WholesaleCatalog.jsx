@@ -46,64 +46,63 @@ export function WholesaleCatalog({ onAddToCart, onProductClick, onCustomCutSelec
   };
 
   return (
-    <section id="catalog" className="py-24 site-container">
+    <section id="catalog" className="py-10 sm:py-16 lg:py-20 site-container">
       {/* Section Header */}
-      <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+      <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 sm:gap-6 mb-6 sm:mb-10">
         <div>
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-red-100/80 text-red-700 text-xs font-black uppercase tracking-wider mb-3 border border-red-200/60">
-            <Sparkles className="w-3.5 h-3.5 text-red-600" />
+          <div className="inline-flex items-center gap-1.5 sm:gap-2 px-3 sm:px-3.5 py-1 sm:py-1.5 rounded-full bg-red-100/80 text-red-700 text-[11px] sm:text-xs font-black uppercase tracking-wider mb-2 sm:mb-3 border border-red-200/60">
+            <Sparkles className="w-3 sm:w-3.5 h-3 sm:h-3.5 text-red-600" />
             <span>Commercial Inventory Hub</span>
           </div>
-          <h2 className="text-3xl sm:text-5xl font-black text-zinc-950 tracking-tight">
+          <h2 className="text-2xl sm:text-4xl lg:text-5xl font-black text-zinc-950 tracking-tight">
             Wholesale Meat Catalog
           </h2>
-          <p className="text-zinc-600 text-sm sm:text-lg mt-2 max-w-2xl leading-relaxed">
+          <p className="text-zinc-600 text-xs sm:text-base mt-1.5 sm:mt-2 max-w-2xl leading-relaxed">
             Live availability from our Concord distribution cold rooms. Volume discounts applied automatically on master box cases and pallet orders.
           </p>
         </div>
 
         {/* Pricing Mode Toggle: Box vs KG (Apple Segmented Control Style) */}
-        <div className="flex items-center gap-1.5 bg-zinc-200/70 p-1.5 rounded-2xl border border-zinc-300/60 shadow-inner self-start md:self-auto">
-          <span className="text-[11px] font-black text-zinc-500 pl-2.5 hidden sm:inline uppercase tracking-wider">Unit:</span>
+        <div className="flex items-center gap-1 bg-zinc-200/70 p-1 sm:p-1.5 rounded-xl sm:rounded-2xl border border-zinc-300/60 shadow-inner w-full sm:w-auto">
           <button
             type="button"
             onClick={() => setPricingMode('box')}
-            className={`flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-black transition-all ${
+            className={`flex-1 sm:flex-initial flex items-center justify-center gap-1.5 px-3 sm:px-4 py-2 rounded-lg sm:rounded-xl text-xs font-black transition-all ${
               pricingMode === 'box'
                 ? 'bg-red-600 text-white shadow-md shadow-red-600/30'
                 : 'text-zinc-600 hover:text-zinc-950 hover:bg-white/40'
             }`}
           >
             <Box className="w-3.5 h-3.5" />
-            <span>Master Box ($/box)</span>
+            <span>Master Box</span>
           </button>
           <button
             type="button"
             onClick={() => setPricingMode('kg')}
-            className={`flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-black transition-all ${
+            className={`flex-1 sm:flex-initial flex items-center justify-center gap-1.5 px-3 sm:px-4 py-2 rounded-lg sm:rounded-xl text-xs font-black transition-all ${
               pricingMode === 'kg'
                 ? 'bg-zinc-950 text-white shadow-md'
                 : 'text-zinc-600 hover:text-zinc-950 hover:bg-white/40'
             }`}
           >
             <Scale className="w-3.5 h-3.5" />
-            <span>Per Kilogram ($/kg)</span>
+            <span>Per Kg</span>
           </button>
         </div>
       </div>
 
       {/* Filter and Search Bar */}
-      <div className="bg-white/95 backdrop-blur-xl rounded-2xl p-4 sm:p-5 border border-zinc-200/90 shadow-[0_4px_20px_rgba(0,0,0,0.03)] mb-10 flex flex-col md:flex-row items-center justify-between gap-4">
+      <div className="bg-white rounded-2xl p-3 sm:p-4 border border-zinc-200 shadow-xs mb-6 sm:mb-8 flex flex-col md:flex-row items-center justify-between gap-3 sm:gap-4">
         {/* Categories */}
-        <div className="flex items-center gap-2 overflow-x-auto w-full md:w-auto pb-2 md:pb-0 scrollbar-none">
+        <div className="flex items-center gap-1.5 overflow-x-auto w-full md:w-auto pb-1 md:pb-0 scrollbar-none">
           {categories.map(cat => (
             <button
               key={cat}
               type="button"
               onClick={() => setSelectedCategory(cat)}
-              className={`px-5 py-2.5 rounded-xl text-xs sm:text-sm font-black whitespace-nowrap transition-all ${
+              className={`px-3.5 sm:px-5 py-2 sm:py-2.5 rounded-lg sm:rounded-xl text-xs sm:text-sm font-bold whitespace-nowrap transition-all ${
                 selectedCategory === cat
-                  ? 'bg-zinc-950 text-white shadow-md'
+                  ? 'bg-zinc-950 text-white shadow-sm'
                   : 'bg-zinc-100 text-zinc-600 hover:bg-zinc-200 hover:text-zinc-950'
               }`}
             >
@@ -166,11 +165,11 @@ export function WholesaleCatalog({ onAddToCart, onProductClick, onCustomCutSelec
               <div
                 key={product.id}
                 onClick={() => onProductClick(product)}
-                className="group cursor-pointer bg-white rounded-[2rem] p-6 border border-zinc-200/80 shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-[0_20px_40px_rgba(0,0,0,0.08)] hover:border-red-500/25 hover:-translate-y-2 transition-all duration-300 flex flex-col justify-between"
+                className="group cursor-pointer bg-white rounded-2xl sm:rounded-3xl p-4 sm:p-6 border border-zinc-200/80 shadow-xs hover:shadow-lg hover:border-red-500/25 transition-all duration-300 flex flex-col justify-between"
               >
                 <div>
                   {/* Image Container with Badge */}
-                  <div className="relative h-56 rounded-2xl overflow-hidden bg-zinc-100 mb-5 border border-zinc-100 shadow-inner">
+                  <div className="relative h-44 sm:h-56 rounded-xl sm:rounded-2xl overflow-hidden bg-zinc-100 mb-4 sm:mb-5 border border-zinc-100 shadow-inner">
                     <img 
                       src={product.image} 
                       alt={product.name}

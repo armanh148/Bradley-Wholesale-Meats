@@ -55,12 +55,12 @@ export function Header({
       </div>
 
       {/* Main Luxury Frosted Glass Header */}
-      <header className="sticky top-0 z-40 bg-white/85 backdrop-blur-2xl border-b border-zinc-200/80 shadow-[0_4px_30px_rgba(0,0,0,0.03)] transition-all">
+      <header className="sticky top-0 z-40 bg-white/90 backdrop-blur-2xl border-b border-zinc-200/80 shadow-[0_4px_30px_rgba(0,0,0,0.03)] transition-all">
         <div className="site-container">
-          <div className="flex items-center justify-between h-20 gap-4">
+          <div className="flex items-center justify-between h-16 sm:h-20 gap-2 sm:gap-4">
             
             {/* Left: Brand Logo (Letter 'B' + "Bradley Wholesale") */}
-            <div className="flex items-center gap-3 shrink-0">
+            <div className="flex items-center gap-2 sm:gap-3 shrink-0">
               <a 
                 href="#home"
                 onClick={(e) => {
@@ -69,16 +69,16 @@ export function Header({
                     setCurrentView('store');
                   }
                 }}
-                className="group flex items-center gap-3 focus:outline-none"
+                className="group flex items-center gap-2 sm:gap-3 focus:outline-none"
               >
                 {/* 3D-Styled Crimson Emblem Logo */}
-                <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-2xl bg-gradient-to-br from-red-500 via-red-600 to-rose-700 flex items-center justify-center text-white shadow-[0_6px_20px_rgba(220,38,38,0.35)] ring-1 ring-white/30 group-hover:scale-105 group-hover:rotate-1 transition-all duration-300 shrink-0">
-                  <span className="font-black text-2xl tracking-tighter text-white drop-shadow-sm">B</span>
+                <div className="w-8 h-8 sm:w-11 sm:h-11 rounded-xl sm:rounded-2xl bg-gradient-to-br from-red-500 via-red-600 to-rose-700 flex items-center justify-center text-white shadow-md shadow-red-600/30 ring-1 ring-white/30 group-hover:scale-105 transition-all shrink-0">
+                  <span className="font-black text-lg sm:text-2xl tracking-tighter text-white drop-shadow-sm">B</span>
                 </div>
                 
                 <div className="flex flex-col">
-                  <div className="flex items-center gap-2">
-                    <span className="font-black text-xl sm:text-2xl tracking-tight text-zinc-950 group-hover:text-red-600 transition-colors">
+                  <div className="flex items-center gap-1.5 sm:gap-2">
+                    <span className="font-black text-sm sm:text-xl md:text-2xl tracking-tight text-zinc-950 group-hover:text-red-600 transition-colors whitespace-nowrap">
                       Bradley Wholesale
                     </span>
                     <span className="hidden sm:inline-block px-2 py-0.5 text-[10px] uppercase font-extrabold tracking-wider bg-red-50 text-red-700 border border-red-200/60 rounded-md">
@@ -132,31 +132,31 @@ export function Header({
             </nav>
 
             {/* Right: Action Buttons */}
-            <div className="flex items-center gap-2 sm:gap-3">
+            <div className="flex items-center gap-1.5 sm:gap-2.5 shrink-0">
               
               {/* Search Icon */}
               <button 
                 type="button"
                 onClick={onSearchClick}
-                className="w-10 h-10 rounded-2xl bg-zinc-100/90 hover:bg-zinc-200/80 border border-zinc-200/70 text-zinc-700 hover:text-zinc-950 flex items-center justify-center transition-all shadow-sm active:scale-95"
+                className="w-8 h-8 sm:w-10 sm:h-10 rounded-xl sm:rounded-2xl bg-zinc-100 hover:bg-zinc-200 border border-zinc-200 text-zinc-700 flex items-center justify-center transition-all shadow-xs active:scale-95"
                 aria-label="Search Catalog"
                 title="Search Meat Catalog"
               >
-                <Search className="w-4 h-4" />
+                <Search className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
               </button>
 
               {/* Cart Button with Counter */}
               <button 
                 type="button"
                 onClick={() => setIsCartOpen(true)}
-                className="relative h-10 px-3.5 rounded-2xl bg-zinc-100/90 hover:bg-zinc-200/80 border border-zinc-200/70 text-zinc-800 flex items-center gap-2 transition-all shadow-sm hover:text-zinc-950 active:scale-95 group"
+                className="relative h-8 sm:h-10 px-2 sm:px-3.5 rounded-xl sm:rounded-2xl bg-zinc-100 hover:bg-zinc-200 border border-zinc-200 text-zinc-800 flex items-center gap-1.5 sm:gap-2 transition-all shadow-xs active:scale-95 group"
                 aria-label="View Cart"
                 title="View Wholesale Cart"
               >
-                <ShoppingBag className="w-4 h-4 text-zinc-800 group-hover:text-red-600 transition-colors" />
+                <ShoppingBag className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-zinc-800 group-hover:text-red-600 transition-colors" />
                 <span className="text-xs font-black tracking-tight hidden sm:inline">Order</span>
                 {cartCount > 0 ? (
-                  <span className="bg-red-600 text-white text-[11px] font-black min-w-[20px] h-5 px-1.5 rounded-full flex items-center justify-center shadow-[0_2px_8px_rgba(220,38,38,0.4)] animate-bounce">
+                  <span className="bg-red-600 text-white text-[10px] sm:text-[11px] font-black min-w-[18px] h-4.5 sm:min-w-[20px] sm:h-5 px-1 sm:px-1.5 rounded-full flex items-center justify-center shadow-xs">
                     {cartCount}
                   </span>
                 ) : (
@@ -168,7 +168,7 @@ export function Header({
               <button
                 type="button"
                 onClick={() => setCurrentView(currentView === 'store' ? 'pos' : 'store')}
-                className={`hidden sm:inline-flex items-center gap-2 px-4 py-2 rounded-2xl text-xs font-black transition-all shadow-sm border active:scale-95 ${
+                className={`hidden md:inline-flex items-center gap-2 px-3.5 py-2 rounded-2xl text-xs font-black transition-all shadow-sm border active:scale-95 ${
                   currentView === 'pos'
                     ? 'bg-zinc-950 text-white border-zinc-900 shadow-zinc-950/25 ring-2 ring-red-500/30'
                     : 'bg-zinc-900 hover:bg-zinc-950 text-white border-zinc-800 shadow-sm'
@@ -187,10 +187,10 @@ export function Header({
               <button 
                 type="button"
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className="lg:hidden w-10 h-10 rounded-2xl bg-zinc-100 border border-zinc-200 text-zinc-700 flex items-center justify-center hover:bg-zinc-200 transition-all shadow-sm"
+                className="lg:hidden w-8 h-8 sm:w-10 sm:h-10 rounded-xl sm:rounded-2xl bg-zinc-100 border border-zinc-200 text-zinc-700 flex items-center justify-center hover:bg-zinc-200 transition-all shadow-xs"
                 aria-label="Toggle Mobile Menu"
               >
-                {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+                {mobileMenuOpen ? <X className="w-4 h-4 sm:w-5 sm:h-5" /> : <Menu className="w-4 h-4 sm:w-5 sm:h-5" />}
               </button>
 
             </div>

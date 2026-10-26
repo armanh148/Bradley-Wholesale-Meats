@@ -6,7 +6,8 @@ import {
   ShieldCheck, 
   Flame, 
   ShoppingBag,
-  Info
+  Info,
+  Truck
 } from 'lucide-react';
 import { FEATURED_HERO_PRODUCTS } from '../data/mockData';
 
@@ -138,17 +139,46 @@ export function FloatingProductCards({ onAddToCart, onProductClick }) {
         })}
       </div>
 
-      {/* Sub-hero Wholesale Benefits Strip */}
-      <div className="mt-8 rounded-2xl bg-white p-4 sm:p-5 border border-zinc-200/80 shadow-xs flex flex-col md:flex-row items-center justify-between gap-3 text-xs sm:text-sm">
-        <div className="flex items-center gap-2.5 text-zinc-900 font-bold">
-          <span className="w-2 h-2 rounded-full bg-red-600 animate-pulse"></span>
-          <span>Commercial Kitchen Program:</span>
-          <span className="font-normal text-zinc-600">Volume tiers up to 15% off for Concord, Vaughan & GTA restaurants.</span>
+      {/* Sub-hero Commercial Kitchen Program Benefits Strip */}
+      <div className="mt-8 rounded-2xl bg-white p-4 sm:p-6 border border-zinc-200/90 shadow-md">
+        {/* Top Header / Announcement */}
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2.5 pb-3.5 border-b border-zinc-100">
+          <div className="flex items-center gap-2.5 flex-wrap">
+            <span className="w-2.5 h-2.5 rounded-full bg-red-600 animate-pulse shrink-0 ring-4 ring-red-100"></span>
+            <span className="text-xs sm:text-sm font-black uppercase tracking-wider text-zinc-950">
+              Commercial Kitchen Program
+            </span>
+            <span className="px-2 py-0.5 rounded-full bg-red-50 text-red-600 text-[10px] font-bold border border-red-200/80 shrink-0">
+              Up to 15% Volume Discount
+            </span>
+          </div>
+          <p className="text-xs text-zinc-500 font-medium">
+            Direct wholesale pricing for Concord, Vaughan & GTA restaurants.
+          </p>
         </div>
-        <div className="flex items-center gap-4 text-zinc-600 font-medium shrink-0 text-xs">
-          <span>● Free GTA Cold Freight over $350 CAD</span>
-          <span>● CFIA Federally Inspected</span>
-          <span>● 100% Hand-Slaughtered</span>
+
+        {/* 3 Value Pillars with Icons instead of plain bullet dots */}
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 sm:gap-4 pt-3.5">
+          <div className="flex items-center gap-2.5 text-xs font-semibold text-zinc-800 bg-zinc-50 sm:bg-transparent p-2.5 sm:p-0 rounded-xl border border-zinc-200/60 sm:border-0">
+            <div className="w-7 h-7 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center shrink-0 border border-emerald-200/60">
+              <Truck className="w-3.5 h-3.5" />
+            </div>
+            <span>Free GTA Cold Freight over $350 CAD</span>
+          </div>
+
+          <div className="flex items-center gap-2.5 text-xs font-semibold text-zinc-800 bg-zinc-50 sm:bg-transparent p-2.5 sm:p-0 rounded-xl border border-zinc-200/60 sm:border-0">
+            <div className="w-7 h-7 rounded-lg bg-blue-50 text-blue-600 flex items-center justify-center shrink-0 border border-blue-200/60">
+              <ShieldCheck className="w-3.5 h-3.5" />
+            </div>
+            <span>CFIA Federally Inspected Meat</span>
+          </div>
+
+          <div className="flex items-center gap-2.5 text-xs font-semibold text-zinc-800 bg-zinc-50 sm:bg-transparent p-2.5 sm:p-0 rounded-xl border border-zinc-200/60 sm:border-0">
+            <div className="w-7 h-7 rounded-lg bg-red-50 text-red-600 flex items-center justify-center shrink-0 border border-red-200/60">
+              <Sparkles className="w-3.5 h-3.5" />
+            </div>
+            <span>100% Hand-Slaughtered Halal</span>
+          </div>
         </div>
       </div>
     </section>

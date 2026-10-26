@@ -49,30 +49,30 @@ export function DeliveryMapSection() {
   };
 
   return (
-    <section id="delivery-zones" className="py-24 site-container">
+    <section id="delivery-zones" className="py-10 sm:py-16 lg:py-20 site-container">
       {/* Title */}
-      <div className="text-center max-w-4xl mx-auto mb-16">
-        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-50 text-blue-800 text-xs font-black uppercase tracking-wider mb-3 border border-blue-200/80 shadow-xs">
-          <Truck className="w-4 h-4 text-blue-600" />
+      <div className="text-center max-w-4xl mx-auto mb-8 sm:mb-12">
+        <div className="inline-flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-1 sm:py-1.5 rounded-full bg-blue-50 text-blue-800 text-[11px] sm:text-xs font-black uppercase tracking-wider mb-2 sm:mb-3 border border-blue-200/80 shadow-xs">
+          <Truck className="w-3.5 sm:w-4 h-3.5 sm:h-4 text-blue-600" />
           <span>Cold-Chain Fleet Logistics</span>
         </div>
-        <h2 className="text-3xl sm:text-5xl font-black text-zinc-950 tracking-tight">
+        <h2 className="text-2xl sm:text-4xl lg:text-5xl font-black text-zinc-950 tracking-tight">
           York Region & Greater Toronto Delivery Fleet
         </h2>
-        <p className="text-zinc-600 text-base sm:text-lg mt-3 leading-relaxed">
+        <p className="text-zinc-600 text-xs sm:text-base mt-2 sm:mt-3 leading-relaxed">
           Dispatching daily from 445 Edgeley Blvd Unit 4, Concord. Equipped with dual-temperature reefers maintained strictly between 0°C and 2°C with live GPS telematics.
         </p>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 items-start">
         
         {/* Left 5 Cols: Interactive Postal Checker & Hub Details */}
-        <div className="lg:col-span-5 space-y-6">
+        <div className="lg:col-span-5 space-y-5 sm:space-y-6">
           
           {/* Postal Code Checker Card */}
-          <div className="bg-white rounded-[2.25rem] p-7 sm:p-8 border border-zinc-200 shadow-xl">
-            <h3 className="font-black text-xl text-zinc-950 mb-1 flex items-center gap-2.5">
-              <Navigation className="w-5 h-5 text-red-600" />
+          <div className="bg-white rounded-2xl sm:rounded-[2.25rem] p-4 sm:p-8 border border-zinc-200 shadow-xl">
+            <h3 className="font-black text-lg sm:text-xl text-zinc-950 mb-1 flex items-center gap-2">
+              <Navigation className="w-4 sm:w-5 h-4 sm:h-5 text-red-600" />
               <span>Check Restaurant Delivery Route</span>
             </h3>
             <p className="text-xs sm:text-sm text-zinc-500 mb-5 leading-relaxed">

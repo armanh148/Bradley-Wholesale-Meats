@@ -97,22 +97,22 @@ export function CustomCutSheet({ preSelectedProduct, onSubmitSuccess }) {
   };
 
   return (
-    <section id="custom-cuts" className="py-24 bg-zinc-100/70 border-y border-zinc-200/90 relative overflow-hidden">
+    <section id="custom-cuts" className="py-10 sm:py-16 lg:py-20 bg-zinc-100/70 border-y border-zinc-200/90 relative overflow-hidden">
       {/* Background Subtle Accent */}
       <div className="absolute top-0 right-0 w-96 h-96 bg-red-600/5 rounded-full blur-3xl pointer-events-none" />
 
       <div className="site-container relative z-10">
         
         {/* Title & Badge */}
-        <div className="text-center max-w-4xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/90 backdrop-blur-md border border-zinc-200 shadow-sm text-xs font-black text-red-600 uppercase tracking-wider mb-3">
-            <ChefHat className="w-4 h-4" />
+        <div className="text-center max-w-4xl mx-auto mb-8 sm:mb-12">
+          <div className="inline-flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-1 sm:py-1.5 rounded-full bg-white/90 backdrop-blur-md border border-zinc-200 shadow-xs text-[11px] sm:text-xs font-black text-red-600 uppercase tracking-wider mb-2 sm:mb-3">
+            <ChefHat className="w-3.5 sm:w-4 h-3.5 sm:h-4" />
             <span>Executive Chef & Master Butcher Studio</span>
           </div>
-          <h2 className="text-3xl sm:text-5xl font-black text-zinc-950 tracking-tight">
+          <h2 className="text-2xl sm:text-4xl lg:text-5xl font-black text-zinc-950 tracking-tight">
             Custom Meat Cut Specification Form
           </h2>
-          <p className="text-zinc-600 text-base sm:text-lg mt-3 leading-relaxed">
+          <p className="text-zinc-600 text-xs sm:text-base mt-2 sm:mt-3 leading-relaxed">
             Exact portion control fabricated for your restaurant menu. Specify your primal cut, thickness, fat cap trim, bone specs, and commercial packaging. Our Concord master butchers cut to your exact kitchen standard.
           </p>
         </div>
